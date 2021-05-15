@@ -73,14 +73,9 @@ public class Main {
         System.out.println("Good luck next time 🤠");
     }
 
-    public static Boolean getPunch() {
-        int damaged = (int) (rn.nextDouble() * 2 + 1);
-        return damaged == 1;
-    }
-
-    public static Boolean getFairy() {
-        int fairies = (int) (rn.nextDouble() * 2 + 1);
-        return fairies == 1;
+    public static Boolean azar() {
+        int azar = (int) (rn.nextDouble() * 2 + 1);
+        return azar == 1;
     }
 
     public static int diceRoll() {
@@ -89,9 +84,9 @@ public class Main {
 
     public static void wizardMove() {
         System.out.println("Harry Potter found a fairy");
-        if (getFairy()) {
+        if (azar()) {
             potter.setFairies(potter.getFairies() + 1);
-            if (potter.getFairies() == 10)
+            if (potter.getFairies() == 20)
                 potter.setPower(potter.getPower() + 1);
             else
                 System.out.println("The wizard get the fairy");
@@ -102,12 +97,12 @@ public class Main {
     public static void getDamaged() {
         System.out.println("You met the ogre in front");
         if (character.getHealth() == 1) {
-            if (getPunch()) {
+            if (azar()) {
                 character.setHealth(character.getDamage());
                 System.out.println("Game over buddy, your so bad 😂😂😂");
             } else System.out.println("you don't receive damage, but you have 1hp");
         } else {
-            if (getPunch()) {
+            if (azar()) {
                 character.setHealth(character.getDamage());
                 System.out.println("You receive damage, your health is " +
                         character.getHealth() + "hp");
@@ -119,7 +114,7 @@ public class Main {
     public static void fairy() {
         System.out.println("Look a fairy!!!\n" +
                 "Careful, they can scape");
-        if (getFairy()) {
+        if (azar()) {
             character.setFairies(character.getFairies() + 1);
             System.out.println("Well done!!!!\nNow you have " + character.getFairies() +
                     " fairies");
