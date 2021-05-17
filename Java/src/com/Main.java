@@ -45,11 +45,11 @@ public class Main {
                     System.out.println(ANSI_RED + "YOUR IN DANGER, YOUR HP IS LOW" + ANSI_RESET);
 
                 if (dice == 1 || dice == 4)
-                    wizardMove();
+                    potter.move(azar());
                 else if (dice == 2 || dice == 5)
-                    getDamaged();
+                    character.damaged(azar());
                 else if(dice == 3 || dice == 6)
-                    fairy();
+                    character.fairy(azar());
 
                 //Finish the game
                 if (character.getHealth() == 0)
@@ -82,44 +82,5 @@ public class Main {
         return (int) (rn.nextDouble() * 6 + 1);
     }
 
-    public static void wizardMove() {
-        System.out.println("Harry Potter found a fairy");
-        if (azar()) {
-            potter.setFairies(potter.getFairies() + 1);
-            if (potter.getFairies() == 20)
-                potter.setPower(potter.getPower() + 1);
-            else
-                System.out.println("The wizard get the fairy");
-        } else
-            System.out.println("the don't get it jsjsjs");
-    }
-
-    public static void getDamaged() {
-        System.out.println("You met the ogre in front");
-        if (character.getHealth() == 1) {
-            if (azar()) {
-                character.setHealth(character.getDamage());
-                System.out.println("Game over buddy, your so bad 😂😂😂");
-            } else System.out.println("you don't receive damage, but you have 1hp");
-        } else {
-            if (azar()) {
-                character.setHealth(character.getDamage());
-                System.out.println("You receive damage, your health is " +
-                        character.getHealth() + "hp");
-            } else System.out.println("you don't receive damage" +
-                    " your health is " + character.getHealth() + "hp");
-        }
-    }
-
-    public static void fairy() {
-        System.out.println("Look a fairy!!!\n" +
-                "Careful, they can scape");
-        if (azar()) {
-            character.setFairies(character.getFairies() + 1);
-            System.out.println("Well done!!!!\nNow you have " + character.getFairies() +
-                    " fairies");
-        } else
-            System.out.println("The fairy scape...🤦‍");
-    }
 
 }
