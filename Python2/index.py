@@ -2,10 +2,11 @@ import character as characters
 import wizard as wizards
 import re
 import random
+import os
 
 letters = re.compile('^[a-zA-Z0-9 ]{3,10}$')
 numbers = re.compile('^\d+$')
-character = characters.Character()
+character = characters.Character('Default')
 wizard = wizards.Wizard()
 
 
@@ -26,7 +27,7 @@ def main():
         if not letters.search(name):
             print('Please only enter letters\nMin length: 3\nMax length: 10')
         else:
-            character.setName(name)
+            character.setName(name or "Jamon Sad")
             loop = False
     else:
         print(
@@ -41,16 +42,19 @@ def main():
             else:
                 if dices == 1 or dices == 3:
                     character.damaged(azar())
+                    os.system('pause')
                 elif dices == 2 or dices == 4:
                     character.fairy(azar())
+                    os.system('pause')
                 elif dices == 5 or dices == 6:
                     wizard.move(azar())
+                    os.system('pause')
             if character.getHealth() == 0:
                 over = True
                 print('Good bye, you did it well')
             if character.getFairies() == 10:
                 over = True
-                print('Dude you did it awesomne')
+                print('Dude you did it awesome')
             if wizard.getPower() == 2:
                 over = True
                 print('The wizard is too strong, we cant defeat him')
@@ -59,6 +63,8 @@ def main():
         else:
             print('Please enter something valid')
     else:
+        print(f'the score of {character.getName()} is of '
+              f'{(character.getHealth() * 10 + character.getFairies() * 25)}')
         print('Sale hasta la pocimaaaa')
 
 

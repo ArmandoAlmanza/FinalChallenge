@@ -1,10 +1,13 @@
 class Character:
-    name = 'Jhon doe'
     fairies = 0
     health = 3
 
-    def __init__(self):
+    def __init__(self, name):
         super().__init__()
+        self.name = name
+
+    def setName(self, name):
+        self.name = name
 
     def getHealth(self):
         return self.health
