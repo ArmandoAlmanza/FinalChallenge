@@ -45,10 +45,10 @@ class Character:
             else:
                 print('You dont receive damage')
 
-    def fairy(self, azar):
+    def fairy(self, azar, fairy):
         print('Look! a fairy\nCareful she can scape')
         if azar:
-            self.setFairies(self.getFairies() + 3)
+            self.setFairies(self.getFairies() + fairy)
             print(f'You catch the fairy!!! well done, now you have {self.getFairies()} fairies'
                     f'\nYou build a house for the fairy')
         else:

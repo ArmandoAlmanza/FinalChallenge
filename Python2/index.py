@@ -19,6 +19,11 @@ def azar():
     return luck == 1
 
 
+def azarFairy():
+    fairy = random.randint(1, 5)
+    return fairy
+
+
 def main():
     over = False
     loop = True
@@ -44,15 +49,15 @@ def main():
                     character.damaged(azar())
                     os.system('pause')
                 elif dices == 2 or dices == 4:
-                    character.fairy(azar())
+                    character.fairy(azar(), azarFairy())
                     os.system('pause')
                 elif dices == 5 or dices == 6:
-                    wizard.move(azar())
+                    wizard.move(azar(), azarFairy())
                     os.system('pause')
             if character.getHealth() == 0:
                 over = True
                 print('Good bye, you did it well')
-            if character.getFairies() == 12:
+            if character.getFairies() >= 10:
                 over = True
                 print('Dude you did it awesome')
             if wizard.getPower() == 2:

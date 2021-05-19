@@ -44,16 +44,16 @@ public class Main {
                     System.out.println(ANSI_RED + "YOUR IN DANGER, YOUR HP IS LOW" + ANSI_RESET);
 
                 if (dice == 1 || dice == 4)
-                    potter.move(azar());
+                    potter.move(azar(), azarFairy());
                 else if (dice == 2 || dice == 5)
                     character.damaged(azar());
                 else if(dice == 3 || dice == 6)
-                    character.fairy(azar());
+                    character.fairy(azar(), azarFairy());
 
                 //Finish the game
                 if (character.getHealth() == 0)
                     over = true;
-                if (character.getFairies() == 12) {
+                if (character.getFairies() >= 10) {
                     System.out.println("OMG you have all the fairies, you won buddy!! 🎉🎉🎉");
                     over = true;
                 }
@@ -79,5 +79,9 @@ public class Main {
 
     public static int diceRoll() {
         return (int) (rn.nextDouble() * 6 + 1);
+    }
+
+    public static int azarFairy() {
+        return (int) (rn.nextDouble() * 5 + 1);
     }
 }

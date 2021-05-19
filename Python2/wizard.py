@@ -17,11 +17,11 @@ class Wizard:
     def getPower(self):
         return self.power
 
-    def move(self, azar):
+    def move(self, azar, fairy):
         print('Look, potter found a fairy')
         if azar:
-            self.setFairies(self.getFairies() + 3)
-            if self.getFairies() == 22:
+            self.setFairies(self.getFairies() + fairy)
+            if self.getFairies() >= 20:
                 self.setPower(self.getPower() + 1)
             else:
                 print('The wizard get a fairy\nAnd he destroy her house :c')

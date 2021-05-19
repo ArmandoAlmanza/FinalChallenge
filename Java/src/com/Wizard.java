@@ -11,11 +11,11 @@ public class Wizard{
 
     public void setFairies(int fairies) { this.fairies = fairies; }
 
-    public void move(boolean azar){
+    public void move(boolean azar, int fairy){
         System.out.println("Harry Potter found a fairy");
         if (azar) {
-            this.setFairies(this.getFairies() + 3);
-            if (this.getFairies() == 22)
+            this.setFairies(this.getFairies() + fairy);
+            if (this.getFairies() >= 20)
                 this.setPower(this.getPower() + 1);
             else
                 System.out.println("The wizard get the fairy"+

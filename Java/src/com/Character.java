@@ -46,11 +46,11 @@ public class Character {
         }
     }
 
-    public void fairy(boolean azar){
+    public void fairy(boolean azar, int fairy){
         System.out.println("Look a fairy!!!\n" +
                 "Careful, they can scape");
         if (azar) {
-            this.setFairies(this.getFairies() + 3);
+            this.setFairies(this.getFairies() + fairy);
             System.out.println("Well done!!!!\nNow you have " + this.getFairies() +
                     " fairies"+
 		    "\nYou build a house for the fairies and their happy :3");
