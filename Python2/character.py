@@ -48,7 +48,8 @@ class Character:
     def fairy(self, azar):
         print('Look! a fairy\nCareful she can scape')
         if azar:
-            self.setFairies(self.getFairies() + 1)
-            print(f'You catch the fairy!!! well done, now you have {self.getFairies()} fairies')
+            self.setFairies(self.getFairies() + 3)
+            print(f'You catch the fairy!!! well done, now you have {self.getFairies()} fairies'
+                    f'\nYou build a house for the fairy')
         else:
             print('oooo bad luck she scape... better luck next time')

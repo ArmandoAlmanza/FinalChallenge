@@ -7,7 +7,6 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static Random rn = new Random();
     public static Wizard potter = new Wizard();
-    public static Character character = new Character();
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
 
@@ -28,7 +27,7 @@ public class Main {
                         "\nMin length: 3" +
                         "\nMax length: 10");
         } while (!name.matches("[A-Za-z\\s]{3,10}"));
-        character.setName(name);
+        Character character = new Character(name);
 
         System.out.println("Initial health: " + character.getHealth());
         System.out.println("Initial fairies: " + character.getFairies());
@@ -81,6 +80,4 @@ public class Main {
     public static int diceRoll() {
         return (int) (rn.nextDouble() * 6 + 1);
     }
-
-
 }

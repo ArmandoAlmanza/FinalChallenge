@@ -20,10 +20,10 @@ class Wizard:
     def move(self, azar):
         print('Look, potter found a fairy')
         if azar:
-            self.setFairies(self.getFairies() + 1)
+            self.setFairies(self.getFairies() + 3)
             if self.getFairies() == 20:
                 self.setPower(self.getPower() + 1)
             else:
-                print('The wizard get a fairy')
+                print('The wizard get a fairy\nAnd he destroy her house :c')
         else:
             print('HAHAHA so dumb he lose it')

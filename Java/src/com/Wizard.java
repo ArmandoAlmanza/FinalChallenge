@@ -14,11 +14,12 @@ public class Wizard{
     public void move(boolean azar){
         System.out.println("Harry Potter found a fairy");
         if (azar) {
-            this.setFairies(this.getFairies() + 1);
+            this.setFairies(this.getFairies() + 3);
             if (this.getFairies() == 20)
                 this.setPower(this.getPower() + 1);
             else
-                System.out.println("The wizard get the fairy");
+                System.out.println("The wizard get the fairy"+
+				"\nThe wizard destroy the house");
         } else
             System.out.println("the don't get it jsjsjs");
     }

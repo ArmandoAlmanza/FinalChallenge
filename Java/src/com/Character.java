@@ -4,7 +4,10 @@ public class Character {
     String name;
     int fairies = 0, health = 3;
 
-    public void setName(String name) { this.name = name; }
+    public Character(String name) {
+        this.name = name;
+    }
+
 
     public int getHealth() {
         return health;
@@ -47,9 +50,10 @@ public class Character {
         System.out.println("Look a fairy!!!\n" +
                 "Careful, they can scape");
         if (azar) {
-            this.setFairies(this.getFairies() + 1);
+            this.setFairies(this.getFairies() + 3);
             System.out.println("Well done!!!!\nNow you have " + this.getFairies() +
-                    " fairies");
+                    " fairies"+
+		    "\nYou build a house for the fairies and their happy :3");
         } else
             System.out.println("The fairy scape...🤦‍");
     }
