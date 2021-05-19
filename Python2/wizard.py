@@ -21,7 +21,7 @@ class Wizard:
         print('Look, potter found a fairy')
         if azar:
             self.setFairies(self.getFairies() + 3)
-            if self.getFairies() == 20:
+            if self.getFairies() == 22:
                 self.setPower(self.getPower() + 1)
             else:
                 print('The wizard get a fairy\nAnd he destroy her house :c')

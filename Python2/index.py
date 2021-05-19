@@ -52,7 +52,7 @@ def main():
             if character.getHealth() == 0:
                 over = True
                 print('Good bye, you did it well')
-            if character.getFairies() == 10:
+            if character.getFairies() == 12:
                 over = True
                 print('Dude you did it awesome')
             if wizard.getPower() == 2:

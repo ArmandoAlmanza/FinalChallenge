@@ -15,7 +15,7 @@ public class Wizard{
         System.out.println("Harry Potter found a fairy");
         if (azar) {
             this.setFairies(this.getFairies() + 3);
-            if (this.getFairies() == 20)
+            if (this.getFairies() == 22)
                 this.setPower(this.getPower() + 1);
             else
                 System.out.println("The wizard get the fairy"+

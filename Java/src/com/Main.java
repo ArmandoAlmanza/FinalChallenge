@@ -53,7 +53,7 @@ public class Main {
                 //Finish the game
                 if (character.getHealth() == 0)
                     over = true;
-                if (character.getFairies() == 10) {
+                if (character.getFairies() == 12) {
                     System.out.println("OMG you have all the fairies, you won buddy!! 🎉🎉🎉");
                     over = true;
                 }
