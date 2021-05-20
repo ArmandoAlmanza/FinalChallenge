@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         String name, roll;
+        int houses = 0;
         boolean over = false;
         //Name block
         System.out.println("Welcome to jumanji!!!🤠💖\n" +
@@ -43,12 +44,16 @@ public class Main {
                 if (character.getHealth() == 1)
                     System.out.println(ANSI_RED + "YOUR IN DANGER, YOUR HP IS LOW" + ANSI_RESET);
 
-                if (dice == 1 || dice == 4)
+                if (dice == 1 || dice == 5)
                     potter.move(azar(), azarFairy());
-                else if (dice == 2 || dice == 5)
+                else if (dice == 2 || dice == 6)
                     character.damaged(azar());
-                else if(dice == 3 || dice == 6)
+                else if(dice == 3 || dice == 7)
                     character.fairy(azar(), azarFairy());
+                else if(dice == 4 || dice == 8){
+                    if (character.house(character.getPieces()) == 1)
+                        houses++;
+                }
 
                 //Finish the game
                 if (character.getHealth() == 0)
@@ -69,6 +74,7 @@ public class Main {
         }
         int score = (character.getFairies() * 25) + (character.getHealth() * 10);
         System.out.println("The score of " + character.getName() + " is: " + score + " points");
+        System.out.println("Houses that build for the fairies: " + houses);
         System.out.println("Good luck next time 🤠");
     }
 
@@ -78,7 +84,7 @@ public class Main {
     }
 
     public static int diceRoll() {
-        return (int) (rn.nextDouble() * 6 + 1);
+        return (int) (rn.nextDouble() * 8 + 1);
     }
 
     public static int azarFairy() {

@@ -1,6 +1,7 @@
 class Character:
     fairies = 0
     health = 3
+    pieces = 0
 
     def __init__(self, name):
         super().__init__()
@@ -50,6 +51,17 @@ class Character:
         if azar:
             self.setFairies(self.getFairies() + fairy)
             print(f'You catch the fairy!!! well done, now you have {self.getFairies()} fairies'
-                    f'\nYou build a house for the fairy')
+                  f'\nYou build a house for the fairy')
         else:
             print('oooo bad luck she scape... better luck next time')
+
+    def houses(self, pieces):
+        if pieces == 2:
+            self.pieces = 0
+            return 1
+
+    def setPieces(self, pieces):
+        self.pieces = pieces
+
+    def getPieces(self):
+        return self.pieces

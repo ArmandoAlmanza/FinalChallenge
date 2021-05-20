@@ -6,12 +6,12 @@ import os
 
 letters = re.compile('^[a-zA-Z0-9 ]{3,10}$')
 numbers = re.compile('^\d+$')
-character = characters.Character('Default')
+character = characters.Character('Player 1')
 wizard = wizards.Wizard()
 
 
 def dice():
-    return random.randint(1, 6)
+    return random.randint(1, 8)
 
 
 def azar():
@@ -27,12 +27,13 @@ def azarFairy():
 def main():
     over = False
     loop = True
+    house = 0
     while loop:
         name = input('Enter the name of your character\n--> ')
         if not letters.search(name):
             print('Please only enter letters\nMin length: 3\nMax length: 10')
         else:
-            character.setName(name or "Jamon Sad")
+            character.setName(name or "Player 1")
             loop = False
     else:
         print(
@@ -45,15 +46,19 @@ def main():
             if not numbers.search(roll):
                 print('Sorry only enter numbers')
             else:
-                if dices == 1 or dices == 3:
+                if dices == 1 or dices == 5:
                     character.damaged(azar())
                     os.system('pause')
-                elif dices == 2 or dices == 4:
+                elif dices == 2 or dices == 6:
                     character.fairy(azar(), azarFairy())
                     os.system('pause')
-                elif dices == 5 or dices == 6:
+                elif dices == 3 or dices == 7:
                     wizard.move(azar(), azarFairy())
                     os.system('pause')
+                elif dices == 4 or dices == 8:
+                    if character.houses(character.getPieces() == 1):
+                        houses = ++house
+                        print('You build a house for the fairies, their so happy :3')
             if character.getHealth() == 0:
                 over = True
                 print('Good bye, you did it well')
@@ -69,7 +74,8 @@ def main():
             print('Please enter something valid')
     else:
         print(f'the score of {character.getName()} is of '
-              f'{(character.getHealth() * 10 + character.getFairies() * 25)}')
+              f'{(character.getHealth() * 10 + character.getFairies() * 25)}'
+              f'\nYou build {houses} houses for the fairies')
         print('Sale hasta la pocimaaaa')
 
 

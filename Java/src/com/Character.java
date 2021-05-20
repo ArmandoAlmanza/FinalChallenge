@@ -2,7 +2,7 @@ package com;
 
 public class Character {
     String name;
-    int fairies = 0, health = 3;
+    int fairies = 0, health = 3, pieces = 0;
 
     public Character(String name) {
         this.name = name;
@@ -58,4 +58,24 @@ public class Character {
             System.out.println("The fairy scape...🤦‍");
     }
 
+    public int house(int piece){
+        if (this.getPieces() == 2) {
+            this.setPieces(0);
+            return 1;
+        }
+        else
+            return this.getPieces();
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPieces() {
+        return pieces;
+    }
+
+    public void setPieces(int pieces) {
+        this.pieces = pieces;
+    }
 }
